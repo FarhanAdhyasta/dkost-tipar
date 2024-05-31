@@ -47,7 +47,7 @@ class DashboardRoomController extends Controller
     ]);
 
     // Simpan gambar dan dapatkan pathnya
-    $imagePath = $request->file('image')->store('post-images');
+    $imagePath = $request->file('image')->store('post-images', 'public');
 
     // Tambahkan path gambar ke dalam data yang telah divalidasi
     $validatedData['image'] = $imagePath;
@@ -133,7 +133,7 @@ class DashboardRoomController extends Controller
             Storage::delete($room->image);
         }
         
-        $imagePath = $request->file('image')->store('post-images');
+        $imagePath = $request->file('image')->store('post-images', 'public');
         // Tambahkan path gambar ke dalam data yang telah divalidasi
         $validatedData['image'] = $imagePath;
     } else {
