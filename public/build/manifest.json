@@ -1,0 +1,16 @@
+{
+  "public/img/hero.jpg": {
+    "file": "assets/hero-6dab6a04.jpg",
+    "src": "public/img/hero.jpg"
+  },
+  "resources/css/app.css": {
+    "file": "assets/app-3962b817.css",
+    "isEntry": true,
+    "src": "resources/css/app.css"
+  },
+  "resources/js/app.js": {
+    "file": "assets/app-f97e13cb.js",
+    "isEntry": true,
+    "src": "resources/js/app.js"
+  }
+}
