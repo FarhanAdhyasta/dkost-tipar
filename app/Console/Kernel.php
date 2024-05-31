@@ -15,19 +15,7 @@ class Kernel extends ConsoleKernel
      */
     protected function schedule(Schedule $schedule): void
     {
-        // $schedule->command('inspire')->hourly();
-        // Tambahkan tugas yang ingin dijalankan secara berkala di sini
-        $schedule->call(function () {
-            $rooms = Room::with('user')->get();
-            foreach($rooms as $room){
-                $expired_date = Carbon::parse($room->end_date)->addDay();
-                if($expired_date->isPast()){
-                    $user = User::find($room->user_id);
-                    $user->update(['is_active' => false]);
-                    $room->update(['user_id' => null, 'start_date'=> null, 'end_date' => null]);
-                }
-            }
-        })->everyMinute(); // Tugas ini akan dijalankan setiap hari
+        $schedule->command('app:update-expired-date')->everyMinute();
     }
 
     /**
