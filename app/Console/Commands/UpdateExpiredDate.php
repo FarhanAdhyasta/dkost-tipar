@@ -6,6 +6,7 @@ use App\Models\Room;
 use App\Models\User;
 use Illuminate\Support\Carbon;
 use Illuminate\Console\Command;
+use Illuminate\Support\Facades\Log;
 
 class UpdateExpiredDate extends Command
 {
@@ -28,6 +29,8 @@ class UpdateExpiredDate extends Command
      */
     public function handle()
     {
+     
+        Log::info('tes');
         $rooms = Room::with('user')->get();
             foreach($rooms as $room){
                 $expired_date = Carbon::parse($room->end_date)->addDay();
