@@ -21,8 +21,12 @@
                                 <h1 style="font-size: 32px; margin-bottom: 20px; color: #1A4D2E;">{{ $greeting }}
                                 </h1>
                             @else
-                                @if ($level === 'error')
-                                    <h1 style="font-size: 32px; margin-bottom: 20px; color: #1A4D2E;">Whoops!</h1>
+                                @if ($actionText === 'Verifikasi Email')
+                                    <h1 style="font-size: 32px; margin-bottom: 20px; color: #1A4D2E;">Verifikasi Email
+                                    </h1>
+                                @elseif ($actionText === 'Reset Password')
+                                    <h1 style="font-size: 32px; margin-bottom: 20px; color: #1A4D2E;">Reset Password
+                                    </h1>
                                 @else
                                     <h1 style="font-size: 32px; margin-bottom: 20px; color: #1A4D2E;">Holla penghuni
                                         D'KOST! 😎🤩</h1>
@@ -31,21 +35,29 @@
 
                             {{-- Intro Lines --}}
                             @foreach ($introLines as $line)
-                                <p style="margin-bottom: 15px; color: #4F6F52;">Terima kasih telah mendaftar! Untuk
-                                    menyelesaikan proses pendaftaran, klik tombol di bawah.</p>
+                                @if ($actionText === 'Verifikasi Email')
+                                    <p style="margin-bottom: 15px; color: #4F6F52;">Silakan verifikasi alamat email Anda
+                                        dengan mengeklik tombol di bawah.</p>
+                                @elseif ($actionText === 'Reset Password')
+                                    <p style="margin-bottom: 15px; color: #4F6F52;">Kami menerima permintaan untuk
+                                        mengatur ulang kata sandi untuk akun Anda. Klik tombol di bawah untuk
+                                        melanjutkan.</p>
+                                @else
+                                    <p style="margin-bottom: 15px; color: #4F6F52;">{{ $line }}</p>
+                                @endif
                             @endforeach
 
                             {{-- Action Button --}}
                             @isset($actionText)
                                 <p style="text-align: center;"><a href="{{ $actionUrl }}"
-                                        style="display: inline-block; padding: 10px 20px; background-color: #1A4D2E; color: #fff; text-decoration: none; border-radius: 5px;">Verifikasi
-                                        Email</a></p>
+                                        style="display: inline-block; padding: 10px 20px; background-color: #1A4D2E; color: #fff; text-decoration: none; border-radius: 5px;">{{ $actionText }}</a>
+                                </p>
                             @endisset
 
                             {{-- Outro Lines --}}
                             @foreach ($outroLines as $line)
-                                <p style="margin-top: 15px; margin-bottom: 20px; color: #4F6F52;">Jika Anda tidak
-                                    membuat akun, Anda tidak perlu melakukan tindakan lebih lanjut.</p>
+                                <p style="margin-top: 15px; margin-bottom: 20px; color: #4F6F52;">{{ $line }}
+                                </p>
                             @endforeach
 
                             {{-- Salutation --}}
