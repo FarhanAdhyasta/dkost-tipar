@@ -34,20 +34,34 @@
                         $features = array_filter($features);
                     @endphp
                     @foreach ($features as $feature)
-                        <li class="list-disc text-sm">{!! $feature !!}</li>
+                        <li class="list-disc text-sm mb-1">{!! $feature !!}</li>
                     @endforeach
                 </ul>
 
             </div>
 
-            <div class="mx-auto bg-white rounded-lg shadow-lg p-5 ">
+            <div class="mx-auto bg-white rounded-lg shadow-lg p-5 mt-5 ">
                 <h2 class="text-lg font-semibold mb-4">Peraturan Kost</h2>
                 <ul class="ms-5">
-                    <li class="list-disc text-sm">Dilarang melakukan hubungan badan</li>
-                    <li class="list-disc text-sm">Wajib menjaga kondisi kamar</li>
-                    <li class="list-disc text-sm">Dilarang mencuri barang orang lain</li>
+                    <li class="list-disc text-sm mb-1">Wajib membawa KTP untuk pengambilan kunci</li>
+                    <li class="list-disc text-sm mb-1 ">Wajib menjaga kondisi kamar</li>
+                    <li class="list-disc text-sm mb-1">Dilarang membawa hewan peliharaan</li>
+                    <li class="list-disc text-sm mb-1">Dilarang mencuri barang orang lain</li>
+                    <li class="list-disc text-sm mb-1">Dilarang melakukan hubungan badan</li>
+                    <li class="list-disc text-sm mb-1">Dilarang membuat kegaduhan</li>
+                    <li class="list-disc text-sm mb-1">Dilarang menginap untuk lawan jenis di dalam kamar kecuali <span
+                            class="font-bold">"PASUTRI"</span> </li>
                 </ul>
+                <p class="font-semibold mt-4 text-sm text-red-600">*Jika penghuni melanggar peraturan, bapak kos berhak
+                    memberikan
+                    sanksi
+                    dikeluarkan
+                    / tidak diterima
+                    di
+                    kos!
+                </p>
             </div>
+
         </div>
 
         <!-- Kolom 2 -->
