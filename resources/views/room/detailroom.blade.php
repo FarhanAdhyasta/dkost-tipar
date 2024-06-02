@@ -50,7 +50,7 @@
                     <li class="list-disc text-sm mb-1">Dilarang melakukan hubungan badan</li>
                     <li class="list-disc text-sm mb-1">Dilarang membuat kegaduhan</li>
                     <li class="list-disc text-sm mb-1">Dilarang menginap untuk lawan jenis di dalam kamar kecuali <span
-                            class="font-bold">"PASUTRI"</span> </li>
+                            class="font-semibold">"PASUTRI"</span> </li>
                 </ul>
                 <p class="font-semibold mt-4 text-sm text-red-600">*Jika penghuni melanggar peraturan, bapak kos berhak
                     memberikan
